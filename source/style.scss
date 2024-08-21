@@ -1,0 +1,34 @@
+// Primary
+$dark: hsl(158, 36%, 37%);
+$cream: hsl(30, 38%, 92%);
+
+// Neutral
+$darkblue: hsl(212, 21%, 14%);
+$darkgrayishblue: hsl(228, 12%, 48%);
+$white: hsl(0, 0%, 100%);
+
+$font-size: 0.875rem;
+
+@font-face {
+  font-family: Montserrat;
+  src: url(../fonts/Fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf);
+}
+
+@font-face {
+  font-family: Fraunces;
+  src: url(../fonts/Fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf);
+}
+
+body {
+  font-family: Montserrat;
+  font-size: $font-size;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

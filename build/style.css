@@ -1,0 +1,14 @@
+@font-face {
+  font-family: Montserrat;
+  src: url(../fonts/Fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf);
+}
+@font-face {
+  font-family: Fraunces;
+  src: url(../fonts/Fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf);
+}
+body {
+  font-family: Montserrat;
+  font-size: 0.875rem;
+}
+
+/*# sourceMappingURL=style.css.map */
