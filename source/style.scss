@@ -8,10 +8,11 @@ $darkgrayishblue: hsl(228, 12%, 48%);
 $white: hsl(0, 0%, 100%);
 
 $font-size: 0.875rem;
+$border-card: 0.75rem;
 
 @font-face {
   font-family: Montserrat;
-  src: url(../fonts/Fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf);
+  src: url(../fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
 }
 
 @font-face {
@@ -19,10 +20,105 @@ $font-size: 0.875rem;
   src: url(../fonts/Fraunces/Fraunces-VariableFont_SOFT\,WONK\,opsz\,wght.ttf);
 }
 
-body {
+@mixin Montserrat500 {
   font-family: Montserrat;
-  font-size: $font-size;
+  font-variation-settings: 'wght' 500;
 }
+
+@mixin Montserrat700 {
+  font-family: Montserrat;
+  font-variation-settings: 'wght' 700;
+}
+
+@mixin Fraunces700 {
+  font-family: Fraunces;
+  font-variation-settings: 'wght' 700;
+}
+
+body {
+  font-family: Fraunces;
+  font-size: $font-size;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: $cream;
+
+
+}
+
+main {
+  max-width: 25rem;
+  margin: auto;
+  background-color: $white;
+  border-radius: $border-card;
+}
+
+img {
+  border-top-left-radius: $border-card;
+  border-top-right-radius: $border-card;
+}
+
+section {
+  padding: 1.5rem;
+
+  header {
+    >p {
+      text-transform: uppercase;
+      letter-spacing: 0.25rem;
+      @include Montserrat500();
+      margin-top: 0;
+      color: $darkgrayishblue;
+    }
+
+    >h1 {
+      font-size: 2rem;
+      margin-top: 0.75rem;
+    }
+  }
+
+  header+p {
+    @include Montserrat500();
+    font-size: 0.92rem;
+    color: $darkgrayishblue;
+  }
+
+  p+p {
+    display: inline-flex;
+    align-items: center;
+
+    strong {
+      font-size: 2.5rem;
+      color: $dark;
+      margin-right: 1rem;
+    }
+
+    s {
+      @include Montserrat500();
+      color: $darkgrayishblue
+    }
+  }
+}
+
+button {
+  @include Montserrat700();
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: $dark;
+  color: $white;
+  border-radius: 0.5rem;
+  margin-top: 0.75rem;
+  border: transparent;
+
+  &:before {
+    content: url(../images/icon-cart.svg);
+    margin-right: 0.75rem;
+    margin-top: 0.1rem;
+  }
+}
+
 
 .attribution {
   font-size: 11px;
