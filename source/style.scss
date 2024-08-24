@@ -35,6 +35,12 @@ $border-card: 0.75rem;
   font-variation-settings: 'wght' 700;
 }
 
+@mixin screen($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
 body {
   font-family: Fraunces;
   font-size: $font-size;
@@ -42,24 +48,33 @@ body {
   align-items: center;
   flex-direction: column;
   background-color: $cream;
-
-
 }
 
 main {
-  max-width: 25rem;
+  max-width: 38rem;
+  display: flex;
+  flex-direction: row;
   margin: auto;
   background-color: $white;
   border-radius: $border-card;
+
+  @include screen(620px) {
+    flex-direction: column;
+    max-width: 22.5rem;
+  }
 }
 
 img {
-  border-top-left-radius: $border-card;
-  border-top-right-radius: $border-card;
+  border-radius: $border-card 0 0 $border-card;
+
+  @include screen(620px) {
+    border-radius: $border-card $border-card 0 0;
+  }
 }
 
 section {
-  padding: 1.5rem;
+  padding: 2rem;
+  max-width: 50%;
 
   header {
     >p {
@@ -71,7 +86,7 @@ section {
     }
 
     >h1 {
-      font-size: 2rem;
+      font-size: 2.25rem;
       margin-top: 0.75rem;
     }
   }
@@ -87,15 +102,20 @@ section {
     align-items: center;
 
     strong {
-      font-size: 2.5rem;
+      font-size: 2rem;
       color: $dark;
-      margin-right: 1rem;
+      margin-right: 1.75rem;
     }
 
     s {
       @include Montserrat500();
       color: $darkgrayishblue
     }
+  }
+
+  @include screen(620px) {
+    max-width: 100%;
+    padding: 1.5rem;
   }
 }
 
@@ -111,12 +131,19 @@ button {
   border-radius: 0.5rem;
   margin-top: 0.75rem;
   border: transparent;
+  transition-duration: 0.4s;
+  text-decoration: none;
 
   &:before {
     content: url(../images/icon-cart.svg);
     margin-right: 0.75rem;
     margin-top: 0.1rem;
   }
+}
+
+button:hover {
+  background-color: $darkblue;
+  cursor: pointer;
 }
 
 

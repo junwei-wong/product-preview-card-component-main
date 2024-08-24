@@ -19,10 +19,16 @@
   </head>
   <body>
     <main>
-      <img
-        src="./images/image-product-mobile.jpg"
-        alt="Product image for mobile"
-      />
+      <picture>
+        <source
+          srcset="./images/image-product-desktop.jpg"
+          media="(min-width: 620px)"
+        />
+        <img
+          src="./images/image-product-mobile.jpg"
+          alt="Product image for mobile"
+        />
+      </picture>
       <section id="details">
         <header>
           <p>Perfume</p>
